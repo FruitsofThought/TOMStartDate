@@ -1,0 +1,13 @@
+locale: nl
+phrases:
+    scenes:
+        TOMStartDate:
+            name: Gebouwen Leeftijd
+            group: Architectuur
+            description: >
+                Deze kaart laat verschuivende kleuren zien voor gebouwen die in
+                OpenStreetMap het veld 'start_date' ingevuld hebben.
+                Hierdoor wordt de structuur van met name dichtbebouwde steden
+                goed duidelijk.
+                De kaart is momenteel alleen in Nederland en in Ng'Ambo op Zanzibar
+                beschikbaar. Vooral in Nederland is de kaart goed bruikbaar.

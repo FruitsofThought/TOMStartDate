@@ -1,0 +1,14 @@
+locale: en
+phrases:
+    scenes:
+        TOMStartDate:
+            name: Building Age
+            group: Architecture
+            description: >
+                This map shows a gradient of colors for buildings that have the
+                field 'start_date' set in http://www.openstreetmap.org.
+                In Dutch cities like Maastricht you can clearly see how the city
+                has expanded and has been renewed.
+                The map is currently only available in The Netherlands and
+                in N'Gambo, Zanzibar, Tanzania. The data is particularly good in
+                 The Netherlands.
