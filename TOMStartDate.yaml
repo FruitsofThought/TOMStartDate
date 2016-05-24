@@ -41,7 +41,7 @@ sources:
         type: TopoJSON
         #url:  http://tiles.mountbatten.nl/all/{z}/{x}/{y}.mvt
         url:  http://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
-        scripts: ['http://localhost/TOMStyles/TOMStartDate/TOMStartDate.js']
+        scripts: ['http://webs.mountbatten.net/TOMStyles/TOMStartDate/TOMStartDate.js']
 
 layers:
     earth:

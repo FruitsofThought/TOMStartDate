@@ -1,4 +1,5 @@
 "use strict";
+//if (typeof define === "function") {
 define(
   ['require', 'scene'],
   function(require, Scene) {
@@ -43,7 +44,7 @@ define(
     return new SceneTOMStartDate();
 
   });
-
+//}
 // helper functions
 function startdatecolor(feature) {
   // Set the years array as static
