@@ -40,8 +40,8 @@ sources:
     mapzen:
         type: TopoJSON
         #url:  http://tiles.mountbatten.nl/all/{z}/{x}/{y}.mvt
-        url:  http://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
-        scripts: ['http://webs.mountbatten.net/TOMStyles/TOMStartDate/TOMStartDate.js']
+        url:  https://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
+        scripts: ['https://raw.githubusercontent.com/FruitsofThought/TOMStartDate/master/TOMStartDate.js']
 
 layers:
     earth:
