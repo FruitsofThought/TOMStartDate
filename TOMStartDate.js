@@ -21,11 +21,11 @@ define(
       get legend() {
         var startdates = getStartDateArray();
         var years = Object.keys(startdates);
-        var legend = [];
-        legend['items'] = [];
+        var legend = {};
+        legend.items = [];
         var year;
         for (year of years) {
-          legend['items'].push({
+          legend.items.push({
             filter: 'around this time',
             title: year,
             description: '',
@@ -37,7 +37,7 @@ define(
             samplelocation: [-52.6537, -4.8049, 18]
           });
         }
-        return legend;
+        return Promise.resolve(legend);
       };
     };
 
