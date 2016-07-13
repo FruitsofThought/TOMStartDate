@@ -48,6 +48,10 @@ define(
 // helper functions
 function startdatecolor(feature) {
   // Set the years array as static
+
+  // This can be much easier using
+  // http://justineo.github.io/kolor/
+
   if (typeof startdatecolor.startdates == 'undefined') {
     // It has not... perform the initialization
     startdatecolor.startdates = getStartDateArray();

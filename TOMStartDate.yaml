@@ -1,6 +1,5 @@
-scene:
-    background:
-        color: '#353535'
+import:
+  - ../TOMBaseStyles/TOMDark.yaml
 
 cameras:
     perspective:
@@ -41,7 +40,7 @@ sources:
         type: TopoJSON
         #url:  http://tiles.mountbatten.nl/all/{z}/{x}/{y}.mvt
         url:  https://tiles.mountbatten.nl/all/{z}/{x}/{y}.topojson
-        scripts: ['https://maps.mountbatten.nl/TOMStyles/TOMStartDate/TOMStartDate.js']
+        scripts: ['TOMStartDate.js']
 
 layers:
     earth:
@@ -88,6 +87,7 @@ layers:
                         fill: white
                         family: Helvetica
                         size: 11px
+                        text_source: global.TOM_multilanguage_label
 
             highway:
                 filter: { kind: highway }
@@ -125,6 +125,7 @@ layers:
                         fill: black
                         family: Helvetica
                         size: 11px
+                        text_source: global.TOM_multilanguage_label
         housenumberlabels:
             filter :
                 $zoom: { min: 18 }
