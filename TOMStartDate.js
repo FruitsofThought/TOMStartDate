@@ -1,50 +1,50 @@
 "use strict";
-//if (typeof define === "function") {
-define(
-  ['require', 'scene'],
-  function(require, Scene) {
+if (typeof define != "undefined") {
+  define(
+    ['require', 'scene'],
+    function(require, Scene) {
 
-    class SceneTOMStartDate extends Scene {
-      constructor() {
-          console.log("Going to Super Scene TOMStartDate");
-          var config = {
-            "id": "TOMStartDate",
-            "groupid": "architecture",
-            "languages": ['en-US', 'nl-NL'],
-          };
-          super(config);
+      class SceneTOMStartDate extends Scene {
+        constructor() {
+            console.log("Going to Super Scene TOMStartDate");
+            var config = {
+              "id": "TOMStartDate",
+              "groupid": "architecture",
+              "languages": ['en-US', 'nl-NL'],
+            };
+            super(config);
+          }
+          // You must copy this, else we do not know where we are
+        get path() {
+          return require.toUrl("./").split('?')[0];
         }
-        // You must copy this, else we do not know where we are
-      get path() {
-        return require.toUrl("./").split('?')[0];
-      }
-      get legend() {
-        var startdates = getStartDateArray();
-        var years = Object.keys(startdates);
-        var legend = {};
-        legend.items = [];
-        var year;
-        for (year of years) {
-          legend.items.push({
-            filter: 'around this time',
-            title: year,
-            description: '',
-            css: "background-color: " + startdates[year] + ";",
-            color: startdates[year],
-            icon: '',
-            minzoom: 6,
-            maxzoom: 20,
-            samplelocation: [-52.6537, -4.8049, 18]
-          });
-        }
-        return Promise.resolve(legend);
+        get legend() {
+          var startdates = getStartDateArray();
+          var years = Object.keys(startdates);
+          var legend = {};
+          legend.items = [];
+          var year;
+          for (year of years) {
+            legend.items.push({
+              filter: 'around this time',
+              title: year,
+              description: '',
+              css: "background-color: " + startdates[year] + ";",
+              color: startdates[year],
+              icon: '',
+              minzoom: 6,
+              maxzoom: 20,
+              samplelocation: [-52.6537, -4.8049, 18]
+            });
+          }
+          return Promise.resolve(legend);
+        };
       };
-    };
 
-    return new SceneTOMStartDate();
+      return new SceneTOMStartDate();
 
-  });
-//}
+    });
+}
 // helper functions
 function startdatecolor(feature) {
   // Set the years array as static
