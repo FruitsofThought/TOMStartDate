@@ -1,5 +1,5 @@
 "use strict";
-if (typeof define != "undefined") {
+if (typeof define !== "undefined") {
   define(
     ['require', 'scene'],
     function(require, Scene) {
