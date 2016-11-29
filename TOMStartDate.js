@@ -51,27 +51,30 @@ function startdatecolor(feature) {
 
   // This can be much easier using
   // http://justineo.github.io/kolor/
-
-  if (typeof startdatecolor.startdates == 'undefined') {
-    // It has not... perform the initialization
-    startdatecolor.startdates = getStartDateArray();
-  }
-
-  if (!feature.hasOwnProperty('start_date')) {
-    return [1, 1, 1];
-  };
-  // In Amsterdam this seems to be the default.
-  if (feature.start_date == '1005') {
-    return [64, 64, 64];
-  };
-  var startdate = Date.parse(feature.start_date);
-
-  var years = Object.keys(startdatecolor.startdates);
-  var year;
-  for (year of years) {
-    if (startdate < Date.parse(year)) {
-      return startdatecolor.startdates[year];
+  try {
+    if (typeof startdatecolor.startdates == 'undefined') {
+      // It has not... perform the initialization
+      startdatecolor.startdates = getStartDateArray();
     }
+
+    if (!feature.hasOwnProperty('start_date')) {
+      return [1, 1, 1];
+    };
+    // In Amsterdam City Centre this seems to be the default.
+    if (feature.start_date == '1005') {
+      return [64, 64, 64];
+    };
+    var startdate = Date.parse(feature.start_date);
+
+    var years = Object.keys(startdatecolor.startdates);
+    var year;
+    for (year of years) {
+      if (startdate < Date.parse(year)) {
+        return startdatecolor.startdates[year];
+      }
+    }
+  } catch (e) {
+    console.log("Error calculating legend value for start_date");
   }
 };
 
